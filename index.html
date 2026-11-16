@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pharmacy Management System</title>
+
+    <!-- Connecting CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2> MediCare </h2>
+        <p>Pharmacy Management</p>
+
+        <button class="nav-link active" data-page="dashboard">Dashboard</button>
+        <button class="nav-link" data-page="medicines">Medicines</button>
+        <button class="nav-link" data-page="inventory">Inventory</button>
+        <button class="nav-link" data-page="billing">Billing</button>
+        <button class="nav-link" data-page="suppliers">Suppliers</button>
+        <button class="nav-link" data-page="customers">Customers</button>
+        <button class="nav-link" data-page="reports">Reports</button>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Dashboard Page -->
+        <section id="dashboard" class="page active">
+
+            <h1>Dashboard</h1>
+            <p>Welcome to MediCare Pharmacy Management System</p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Medicines</h3>
+                    <h2 id="totalMedicines">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Total Customers</h3>
+                    <h2 id="totalCustomers">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Total Sales</h3>
+                    <h2 id="totalSales">₹0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Low Stock</h3>
+                    <h2 id="lowStock">0</h2>
+                </div>
+
+            </div>
+
+            <h2>Recent Medicines</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+
+                <tbody id="dashboardMedicineTable">
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- Medicines Page -->
+        <section id="medicines" class="page">
+
+            <h1>Medicine Management</h1>
+
+            <h3>Add New Medicine</h3>
+
+            <form id="medicineForm">
+
+                <input type="text" id="medicineName"
+                    placeholder="Medicine Name" required>
+
+                <input type="text" id="medicineCategory"
+                    placeholder="Category" required>
+
+                <input type="number" id="medicinePrice"
+                    placeholder="Price" required>
+
+                <input type="number" id="medicineQuantity"
+                    placeholder="Quantity" required>
+
+                <input type="date" id="medicineExpiry" required>
+
+                <button type="submit">Add Medicine</button>
+
+            </form>
+
+            <h2>Medicine List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+
+                <tbody id="medicineTable">
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- Inventory Page -->
+        <section id="inventory" class="page">
+
+            <h1>Inventory Management</h1>
+
+            <p>Check the available medicine stock.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Available Stock</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="inventoryTable">
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- Billing Page -->
+        <section id="billing" class="page">
+
+            <h1>Billing and Sales</h1>
+
+            <form id="billingForm">
+
+                <input type="text" id="customerName"
+                    placeholder="Customer Name" required>
+
+                <input type="text" id="billMedicine"
+                    placeholder="Medicine Name" required>
+
+                <input type="number" id="billQuantity"
+                    placeholder="Quantity" min="1" required>
+
+                <button type="submit">Generate Bill</button>
+
+            </form>
+
+            <h2>Sales History</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Total Amount</th>
+                    </tr>
+                </thead>
+
+                <tbody id="salesTable">
+                </tbody>
+            </table>
+
+        </section>
+
+0
+        <!-- Suppliers Page -->
+        <section id="suppliers" class="page">
+
+            <h1>Supplier Management</h1>
+
+            <form id="supplierForm">
+
+                <input type="text" id="supplierName"
+                    placeholder="Supplier Name" required>
+
+                <input type="text" id="supplierPhone"
+                    placeholder="Phone Number" required>
+
+                <button type="submit">Add Supplier</button>
+
+            </form>
+
+            <h2>Supplier List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Supplier Name</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+
+                <tbody id="supplierTable">
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- Customers Page -->
+        <section id="customers" class="page">
+
+            <h1>Customer Management</h1>
+
+            <form id="customerForm">
+
+                <input type="text" id="newCustomerName"
+                    placeholder="Customer Name" required>
+
+                <input type="text" id="customerPhone"
+                    placeholder="Phone Number" required>
+
+                <button type="submit">Add Customer</button>
+
+            </form>
+
+            <h2>Customer List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+
+                <tbody id="customerTable">
+                </tbody>
+            </table>
+
+        </section>
+
+
+        <!-- Reports Page -->
+        <section id="reports" class="page">
+
+            <h1>Reports</h1>
+
+            <div class="card">
+                <h3>Total Sales</h3>
+                <h2 id="reportSales">₹0</h2>
+            </div>
+
+            <p>Sales information will be displayed here.</p>
+
+        </section>
+
+    </div>
+
+
+    <!-- Connecting JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
